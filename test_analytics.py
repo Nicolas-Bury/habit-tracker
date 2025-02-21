@@ -110,7 +110,7 @@ class TestAnalytics:
         ratios = analytics.get_daily_habits_completion_ratio(db_name="test_habit.db")
 
         today = datetime.now()
-        time_passed = (today - datetime(2025, 1, 1)).days
+        time_passed = (today - datetime(2025, 1, 1)).days +1
 
         exercise_ratio = 4 / time_passed
         brush_teeth_ratio = 1 / time_passed
@@ -125,7 +125,7 @@ class TestAnalytics:
         ratios = analytics.get_weekly_habits_completion_ratio(db_name="test_habit.db")
 
         today = datetime.now()
-        time_passed = (today - datetime(2025, 1, 1)).days // 7
+        time_passed = ((today - datetime(2025, 1, 1)).days // 7) +1
 
         read_ratio = 3 / time_passed
         check_mails_ratio = 1 / time_passed

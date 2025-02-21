@@ -1,5 +1,5 @@
 import sqlite3
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 from analytics_queries import *
 
 def connect_db(db_name: str = "habit.db") -> sqlite3.Connection:
@@ -309,8 +309,8 @@ def get_daily_habits_completion_ratio(db_name: str = "habit.db") -> list[tuple[s
 
     for habit, _, creation_date in habits:
         creation_date = datetime.strptime(creation_date, "%Y-%m-%d")
-        today = datetime.now()
-        habit_length = (today - creation_date).days
+        today = date.today()
+        habit_length = (today - creation_date.date()).days +1
         completion_occurences = len(fetch_habit_completion_dates(habit, db_name))
         completion_ratio = completion_occurences / habit_length if habit_length > 0 else 0
         completion_ratios.append((habit, completion_ratio))
@@ -333,7 +333,7 @@ def get_weekly_habits_completion_ratio(db_name: str = "habit.db") -> list[tuple[
     for habit, _, creation_date in habits:
         creation_date = datetime.strptime(creation_date, "%Y-%m-%d")
         today = datetime.now()
-        habit_length = (today - creation_date).days // 7
+        habit_length = ((today - creation_date).days // 7) +1
         completion_occurences = len(fetch_habit_completion_dates(habit, db_name))
         completion_ratio = completion_occurences / habit_length if habit_length > 0 else 0
         completion_ratios.append((habit, completion_ratio))
