@@ -139,7 +139,6 @@ def view_longest_streak_of_habit() -> None:
             print(f"No completion found for habit '{habit_name}'.")
         else:
             print(f"Longest streak for habit '{habit_name}': {longest_streak} {formatted_period}.")
-        pause()
         
     pause()
 
