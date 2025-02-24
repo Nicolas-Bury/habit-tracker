@@ -147,7 +147,11 @@ def view_longest_streak_of_habit() -> None:
         formatted_period = (lambda x: "days" if x == "daily" else "weeks")(periodicity)
         if longest_streak == 0:
             print(f"No completion found for habit '{habit_name}'.")
+        elif longest_streak == 1:
+            formatted_period = (lambda x: "day" if x == "daily" else "week")(periodicity)
+            print(f"Longest streak for habit '{habit_name}': {longest_streak} {formatted_period}.")
         else:
+            formatted_period = (lambda x: "days" if x == "daily" else "weeks")(periodicity)
             print(f"Longest streak for habit '{habit_name}': {longest_streak} {formatted_period}.")
         
     pause()
