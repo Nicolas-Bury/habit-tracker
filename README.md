@@ -19,6 +19,9 @@ A simple Command-Line Interface (CLI) application to help you track your habits,
 - **Habits:** Stores habit details (name, periodicity, user association).
 - **Completions:** Tracks when habits are marked as complete (id, habit name, completion date).
 
+The database comes with example tracking data already populated (5 pre-defined habits, with 4 weeks of tracking data).
+Delete the database file in order to start a new experience.
+
 ## Installation
 
 1. **Clone the Repository:**  
