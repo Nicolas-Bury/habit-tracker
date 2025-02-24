@@ -34,6 +34,16 @@ def enter_date() -> datetime:
 def create_habit() -> None:
     """Prompts the users to create a habit by providing a habit name and selecting a periodicity."""
     habit_name = questionary.text("Enter the habit name:").ask()
+
+    if len(habit_name) < 3:
+        print("Habit name must be at least 3 characters long.")
+        create_habit()
+        return
+    elif len(habit_name) > 20:
+        print("Habit name must be at most 20 characters long.")
+        create_habit()
+        return
+
     periodicity = questionary.select(
         "Select the habit periodicity:",
         choices=['daily', 'weekly']
