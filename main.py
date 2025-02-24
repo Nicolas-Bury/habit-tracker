@@ -44,8 +44,8 @@ def analytics_module() -> None:
                 "View daily habits",
                 "View weekly habits",
                 "View habit completion dates",
-                "View longuest streak of all",
-                "View longuest streak of specific habit",
+                "View longest streak of all",
+                "View longest streak of specific habit",
                 "View daily habits completion ratio",
                 "View weekly habits completion ratio",
                 "Back"
@@ -59,9 +59,9 @@ def analytics_module() -> None:
             prompts.view_weekly_habits()
         elif choice == "View habit completion dates":
             prompts.view_habit_completion_dates()
-        elif choice == "View longuest streak of all":
+        elif choice == "View longest streak of all":
             prompts.view_longest_streak_of_all()
-        elif choice == "View longuest streak of specific habit":
+        elif choice == "View longest streak of specific habit":
             prompts.view_longest_streak_of_habit()
         elif choice == "View daily habits completion ratio":
             prompts.view_daily_habits_completion_ratio()
